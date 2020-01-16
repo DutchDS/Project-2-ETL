@@ -1,4 +1,5 @@
-select w.wine_name, wt.wine_type, ws.winery_name, c.country_name, p.province_name, r.region_name, c.temperature, c.latitude, c.longitude 
+select w.wine_name "Wine", wt.wine_type "Type", ws.winery_name "Winery", c.country_name "Country", 
+	p.province_name "Province",  r.region_name "Region", p.avg_f "Average Temperature", w.price "Price", w.rating "Rating"
 
 from wines w 
 	inner join countries c on w.country_id = c.country_id
@@ -9,3 +10,4 @@ from wines w
 	
 where c.country_name = 'United States'
 	
+
