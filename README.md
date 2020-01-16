@@ -28,22 +28,23 @@ TRANSFORM:
 * small data cleanup within the region_name column
 * drop any rows that have data missing (NaN values) >> df_wine_base
 * group remaining fields and average prince and rating >> df_wine_data
-	   	2. Countries:
-			* add average temperature per country when found to df_countries dataframe (combine datasource 3 with 2)
-			* create unique country_id's
-	   	3. Wineries:
-			* create unique df_wineries dataframe from df_wine_base with winery_id for lookup
-	  	4. Provinces:
-			* create unique df_provinces dataframe from df_wine_base with province_id for lookup
-			* add average temperature in Fahrenheit and Celcius for every state (=provence) in the united states to df_provinces
-	   	5. Regions:
-			* create unique df_regions dataframe from df_wine_base with region_id for lookup
-	   	6. Wine_types:
-			* create unique df_wine_types dataframe from df_wine_base with wine_type_id for lookup	
-		Finally merge df_wine_base with 5 other dataframes, adding country_id, winery_id, province_id, region_id, wine_type_id as new columns.
-		Remove country_name, winery_name province_name, region_name and wine_type from df_wine_data, leaving only foreign keys in place!
+2. Countries:
+* add average temperature per country when found to df_countries dataframe (combine datasource 3 with 2)
+* create unique country_id's
+3. Wineries:
+* create unique df_wineries dataframe from df_wine_base with winery_id for lookup
+4. Provinces:
+* create unique df_provinces dataframe from df_wine_base with province_id for lookup
+* add average temperature in Fahrenheit and Celcius for every state (=provence) in the united states to df_provinces
+5. Regions:
+* create unique df_regions dataframe from df_wine_base with region_id for lookup
+6. Wine_types:
+* create unique df_wine_types dataframe from df_wine_base with wine_type_id for lookup	
+		
+Finally merge df_wine_base with 5 other dataframes, adding country_id, winery_id, province_id, region_id, wine_type_id as new columns.
+Remove country_name, winery_name province_name, region_name and wine_type from df_wine_data, leaving only foreign keys in place!
 
-	LOAD: Since the tables have been precreated in postgreSQL, loading of the data can happen only once (or primary keys will be violated). A test query combining all 6 tables shows it worked correctly.
+LOAD: Since the tables have been precreated in postgreSQL, loading of the data can happen only once (or primary keys will be violated). A test query combining all 6 tables shows it worked correctly.
 
 For the full picture see below:
 ![Overview_1.png](Output/Overview_1.png) 
