@@ -22,12 +22,12 @@ EXTRACT: First the following 4 data sources are loaded. Csv files can be found i
 3. read_html using panda for annual temperature averages per county - source: wikipedia
 4. state_temps.cvs - source: www.currentresults.com
 
-	TRANSFORM:
-	   	1. Wines:
-			* remove all unnecessary columns (from datasource 1)
-			* small data cleanup within the region_name column
-			* drop any rows that have data missing (NaN values) >> df_wine_base
-			* group remaining fields and average prince and rating >> df_wine_data
+TRANSFORM:
+1. Wines:
+* remove all unnecessary columns (from datasource 1)
+* small data cleanup within the region_name column
+* drop any rows that have data missing (NaN values) >> df_wine_base
+* group remaining fields and average prince and rating >> df_wine_data
 	   	2. Countries:
 			* add average temperature per country when found to df_countries dataframe (combine datasource 3 with 2)
 			* create unique country_id's
