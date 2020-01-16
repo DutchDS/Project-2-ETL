@@ -8,13 +8,14 @@ The program takes 4 datasources and eventually creates a normalized database wit
 
 These are the steps that were taken:
 
-1. the database schema was defined ![Quickdatabasediagrams.com](https://app.quickdatabasediagrams.com/#/d/qEHxLS) as follows:
+1. the database schema was defined ![Quickdatabasediagrams.com](https://app.quickdatabasediagrams.com) as follows:
 
 ![Wine_DB_Diagram.png](Output/Wine_DB_Diagram.png) 
 
 2. The export function was used to predefine the database in PostgresSQL (see ![Create_tables_for_wine_db.sql](SQL_Files/Create_tables_for_wine_db.sql)
 
 3. Once the database is ready, the ETL process can run. 
+
 	EXTRACT: First the following 4 data sources are loaded. Csv files can be found in the Resources folder
 		1. winemag.csv - source kaggle.com
 		2. countries.csv - source: wikipedia
