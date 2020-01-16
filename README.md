@@ -19,7 +19,7 @@ These are the steps that were taken:
 EXTRACT: First the following 4 data sources are loaded. Csv files can be found in the Resources folder
 1. winemag.csv - source kaggle.com
 2. countries.csv - source: wikipedia
-3. read_html using panda for annual temperature averages per county - source: wikipedia
+3. read_html using pandas for annual temperature averages per county - source: wikipedia
 4. state_temps.cvs - source: www.currentresults.com
 
 TRANSFORM:
