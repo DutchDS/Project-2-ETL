@@ -8,26 +8,26 @@ The program takes 4 datasources and eventually creates a normalized database wit
 
 These are the steps that were taken:
 
-1. the database schema was defined [quickdatabasediagrams.com](https://app.quickdatabasediagrams.com) as follows:
+1. The database schema was defined [quickdatabasediagrams.com](https://app.quickdatabasediagrams.com) as follows:
 
 ![Wine_DB_Diagram.png](Output/Wine_DB_Diagram.png) 
 
-2. The export function was used to predefine the database in PostgresSQL (see [Create_tables_for_wine_db.sql](SQL_Files/Create_tables_for_wine_db.sql)
+2. The export function was used to predefine the database in PostgresSQL (see [Create_tables_for_wine_db.sql](SQL_Files/Create_tables_for_wine_db.sql))
 
 3. Once the database is ready, the ETL process can run. 
 
 EXTRACT: First the following 4 data sources are loaded. Csv files can be found in the Resources folder
-1. winemag.csv - source kaggle.com
-2. countries.csv - source: wikipedia
-3. read_html using pandas for annual temperature averages per county - source: wikipedia
-4. state_temps.cvs - source: www.currentresults.com
+1. winemag.csv - [source kaggle.com](https://www.kaggle.com/zynicide/wine-reviews)
+2. countries.csv - [source: wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_latitude)
+3. read_html using pandas for annual temperature averages per county - [source: wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature) 
+4. state_temps.cvs - [source: www.currentresults.com](https://www.currentresults.com/Weather/US/average-annual-state-temperatures.php)
 
 TRANSFORM:
 1. Wines:
 * remove all unnecessary columns (from datasource 1)
 * small data cleanup within the region_name column
 * drop any rows that have data missing (NaN values) >> df_wine_base
-* group remaining fields and average prince and rating >> df_wine_data
+* group remaining fields by unique wine and average price and rating >> df_wine_data
 2. Countries:
 * add average temperature per country when found to df_countries dataframe (combine datasource 3 with 2)
 * create unique country_id's
